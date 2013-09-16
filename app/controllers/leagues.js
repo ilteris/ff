@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 , async = require('async')
 , League = mongoose.model('League')
-, - = require('underscore')
+, _ = require('underscore')
 
 exports.create = function(req, res) {
 	var league = new League(req.body)
@@ -14,7 +14,7 @@ exports.show = function(req, res) {
 	res.jsonp(req.league);
 }
 
-export.league = function(req, res, next, id) {
+exports.league = function(req, res, next, id) {
 	var League = mongoose.model('League')
 
 	League.load (id, function (err, league) {
